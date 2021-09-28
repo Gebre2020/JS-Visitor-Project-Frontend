@@ -68,6 +68,13 @@ class TripService {
         // })
     }
 
-    
+    deleteTrip(e) {
+        // debugger
+        const id = e.target.dataset.id
+        e.target.parentElement.remove()
+        fetch(`${this.port}/trips/${id}`, {method: 'DELETE'})
+       .then(response => response.json())
+       .then(json => alert(json.message))
+    }
 
 }
