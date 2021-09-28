@@ -39,6 +39,34 @@ class Trip {
         // debugger
     }
 
-    
+    handleClick = e => {
+        if(e.target.innerText === "Edit Trip") {
+            console.log(e.target)
+            e.target.innerText = "Save Trip"
+            this.createEditForm()
+        }else if(e.target.innerText === "X") {
+            console.log(e.target)
+            tripCall.deleteTrip(e)
+        }else if(e.target.innerText === "Save Trip") {
+            console.log("Save works")
+            e.target.innerText = "Edit Trip"
+            this.updatedTripInfo()
+        }
+    }
+
+    createEditForm() {
+        const div = this.element.querySelector('div');
+        for(const element of div.children) {
+            let inputValue = element.innerText;
+            let name = element.classList[0];
+            element.outerHTML = `<input type="text" class="edit-${name}" value="${inputValue}"/>`
+        }
+        // debugger
+    }
+
+    attachToDom() {
+        //debugger
+        Trip.cont.appendChild(this.render())
+    }
 
 }
