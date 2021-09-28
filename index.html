@@ -1,19 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="src/location_service.js"></script>
+    <script defer src="src/location.js"></script>
+    <script defer src="src/trip_service.js"></script>
+    <script defer src="src/trip.js"></script>
+    <script defer src="index.js"></script>
+
     <title>JS-Visitor-Project-Frontend</title>
 </head>
 <body>
-    <div id="trip-form"></div>
-    <div id="trip"></div>
-    <div id="location"></div>
-    <script src="src/location_service.js"></script>
-    <script src="src/location.js"></script>
-    <script src="src/trip_service.js"></script>
-    <script src="src/trip.js"></script>
-    <script src="index.js"></script>
+      <h2>Create Trip:</h2>
+      <form id="trip-form">
+          <label for="trip-name">Name: </label>
+          <input type="text" name="name" id="trip-name"/><br/>
+          <label for="trip-address">Address: </label>
+          <input type="text" name="address" id="trip-address"/><br/>
+          <label for="trip-budget">Budget: </label>
+          <input type="number" name="budget" id="trip-budget" min="0" step=".01"/><br/> 
+
+          <select name="location_id" id="location-dropdown"></select><br/>
+          
+          <input type="submit" value="Create Trip"/>        
+      </form>
+    <div id="locations"></div>   
+    <div id="trips-cont"></div>
 </body>
 </html>
