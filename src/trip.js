@@ -1,13 +1,13 @@
 class Trip {
     static all = [];
-    static cont = document.getElementById("trips-cont")
-    constructor({name, address, id, budget, location_id, location}) {
+    static tripsContainer = document.getElementById("trips-container")
+    constructor({name, address, budget, id, location_id}) {
         this.name =name
         this.address =address
-        this.id =id
         this.budget = budget
-        this.location_id = location_id
-        this.location = location
+        this.id =id
+        this.locationId = location_id
+        
         this.element = document.createElement('li');
         this.element.dataset['id'] = id;
         this.element.id = `trip-${id}`;
@@ -15,17 +15,50 @@ class Trip {
         Trip.all.push(this)
         // debugger
     }
+
+    static filteredByLocation(filteredLocation) {
+        if(filteredLocation) {
+            for(const t of Trip.all){
+                if(t.locationId === parseInt(filteredLocation.id)){
+                    t.element.style.display =""               
+                }else {
+                    t.element.style.display = "none"
+                }
+            }
+        }else {
+            for(const t of Trip.all){
+                t.element.style.display = ""
+            }
+        }
+       // debugger
+    // or
+    //    if(filteredLocation){
+    //        const filteredTrips = Trip.all.filter((t) => {
+    //            //debugger
+    //            return t.locationId === parseInt(filteredLocation.id)
+    //        })
+    //        Trip.tripsContainer.innerHTML = "";
+    //        for(const trip of filteredTrips) {
+    //            trip.renderTrip()
+    //        }
+    //     }else{ 
+    //         Trip.tripsContainer.innerHTML = "";
+    //         for(const trip of Trip.all) {
+    //             trip.renderTrip()
+    //         }    
+    //    }
+    }
     
     render() {
         this.element.innerHTML = `
         <div data-id="${this.id}">
         <h2 class="name">${this.name}</h2>
-        <p class="address">${this.address}</p>
-        <p class="budget">${this.budget}</p>
+        Address: <span class="address">${this.address}</span>
+        Budget: $<span class="budget">${this.budget}</span>
         </div>
         <button class="edit" data-id=${this.id}>Edit Trip</button>
         <button class="delete" data-id=${this.id}>X</button>
-        
+
         `
         return this.element
     }
@@ -64,9 +97,9 @@ class Trip {
         // debugger
     }
 
-    attachToDom() {
+    attachToDom() {   // renderTrip()
         //debugger
-        Trip.cont.appendChild(this.render())
+        Trip.tripsContainer.appendChild(this.render())
     }
 
 }
