@@ -14,20 +14,29 @@
     <title>JS-Visitor-Project-Frontend</title>
 </head>
 <body>
-      <h2>Create Trip:</h2>
-      <form id="trip-form">
-          <label for="trip-name">Name: </label>
-          <input type="text" name="name" id="trip-name"/><br/>
-          <label for="trip-address">Address: </label>
-          <input type="text" name="address" id="trip-address"/><br/>
-          <label for="trip-budget">Budget: </label>
-          <input type="number" name="budget" id="trip-budget" min="0" step=".01"/><br/> 
+    <h1>Our Visitor App</h1>
+    <h2>Filter by Location:</h2>
+    <div id="loc-container"></div>
+    <h2>Here are all the Trips:</h2>
+    <ul id="trips-container"></ul>
 
-          <select name="location_id" id="location-dropdown"></select><br/>
-          
-          <input type="submit" value="Create Trip"/>        
-      </form>
-    <div id="locations"></div>   
-    <div id="trips-cont"></div>
+    <h2>Create Trip:</h2>
+    <form id="trip-form">
+        <label for="trip-name">Name: </label>
+        <input type="text" name="name" id="trip-name"/><br/>
+        <label for="trip-address">Address: </label>
+        <input type="text" name="address" id="trip-address"/><br/>
+        <label for="trip-budget">Budget: </label>
+        <input type="number" name="budget" id="trip-budget" min="0" step="0.01"/><br/><br/> 
+
+        <label for="location-dropdown">Location Name:</label>
+        <select name="location_id" id="location-dropdown"></select><br/><br/>
+
+        <label for="location-Name">Location Name: </label>
+        <input type="text" name="location" id="location-id"/><br/>
+       
+        <input type="submit" value="Create Trip"/>        
+    </form>
+  
 </body>
 </html>
