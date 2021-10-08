@@ -36,7 +36,7 @@ class Location {
         
         let filteredLocation
         // let body = document.querySelector('body');
-        // body.style.backgroundColor = "pink"
+        // body.style.backgroundColor = "pink" 
         Location.all.forEach(l => {
             //debugger
             if(l.element === this.element && !this.active){
@@ -49,7 +49,7 @@ class Location {
                 l.active = false
             }
             Trip.filteredByLocation(filteredLocation)  
-        }) 
+        })
     }
 
     addToDropDown(){
