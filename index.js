@@ -7,7 +7,7 @@ const form = document.getElementById("trip-form")
 const nameValue = document.getElementById("trip-name")
 const addressValue = document.getElementById("trip-address")
 const budgetValue = document.getElementById("trip-budget")
-const locationValue = document.getElementById("location-id")
+const locNameValue = document.getElementById("location-name")
 
 tripCall.getTrips()
 locationCall.getLocations()
