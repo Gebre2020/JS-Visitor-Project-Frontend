@@ -52,8 +52,8 @@ class Trip {
     render() {
         this.element.innerHTML = `
         <div data-id="${this.id}">
-        <h2 class="name">${this.name}</h2>
-        Address: <span class="address">${this.address}</span>
+        <h3 class="name">${this.name}</h3>
+        Address: <span class="address">${this.address}</span><br/>
         Budget: $<span class="budget">${this.budget}</span>
         </div>
         <button class="edit" data-id=${this.id}>Edit Trip</button>
