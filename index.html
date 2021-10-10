@@ -13,30 +13,59 @@
 
     <title>JS-Visitor-Project-Frontend</title>
 </head>
+
 <body>
-    <h1>Our Visitor App</h1>
-    <h2>Filter by Location:</h2>
-    <div id="loc-container"></div>
-    <h2>Here are all the Trips:</h2>
-    <ul id="trips-container"></ul>
+    <header id="main-header">
+        <div class="container">
+            <h1>Welcome Visitor App Website</h1>
+        </div>
+    </header>
 
-    <h2>Create Trip:</h2>
-    <form id="trip-form">
-        <label for="trip-name">Name: </label>
-        <input type="text" name="name" id="trip-name"/><br/>
-        <label for="trip-address">Address: </label>
-        <input type="text" name="address" id="trip-address"/><br/>
-        <label for="trip-budget">Budget: </label>
-        <input type="number" name="budget" id="trip-budget" min="0" step="0.01"/><br/><br/> 
+    <div class="container-1"></div>
+        <div id="location-box">
+            <h2>Filter by Location:</h2>
+            <div id="loc-container">              
+            </div>
+        </div>
+    </div>
 
-        <label for="location-dropdown">Location Name:</label>
-        <select name="location_id" id="location-dropdown"></select><br/><br/>
-
-        <label for="location-Name">Location Name: </label>
-        <input type="text" name="name" id="location-name"/><br/>
-       
-        <input type="submit" value="Create Trip"/>        
-    </form>
-  
+    <div class="container-2">
+        <div id="trip-box">
+            <h2>Here are all the Trips:</h2>
+            <div><ul id="trips-container"></ul></div>
+        </div>
+    </div>
+    
+    <div class="my-form">
+        <h2>Create a New Trip:</h2>
+        <form id="trip-form">
+            <div class="form-group">
+                <label for="trip-name">Name: </label>
+                <input type="text" name="name" id="trip-name"/><br/>
+            </div>
+            <div class="form-group">
+                <label for="trip-address">Address: </label>
+                <input type="text" name="address" id="trip-address"/><br/>
+            </div>
+            <div class="form-group">
+                <label for="trip-budget">Budget: </label>
+                <input type="number" name="budget" id="trip-budget" min="0" step="0.01"/><br/><br/> 
+            </div>
+            <div class="form-group">
+                <label for="location-dropdown">Choose a Location Name:</label>
+                <select name="location_id" id="location-dropdown"></select><br/><br/>
+            </div>
+            <div class="form-group">
+                <label for="location-Name">Location Name: </label>
+                <input type="text" name="name" id="location-name"/><br/>
+            </div>
+            <input class="button" type="submit" value="Create Trip"/>        
+        </form>
+    </div>
+    
+    <footer id="main-footer">
+        <p>Copyright &copy; 2021 Visitor App Website</p>
+    </footer>
+    <div style="margin-top: 100px;"></div>
 </body>
 </html>
