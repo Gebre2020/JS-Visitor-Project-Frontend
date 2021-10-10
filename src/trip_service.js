@@ -17,7 +17,7 @@ class TripService {
         })
     }
     
-
+    
     createTrips() {
         //debugger
         const tripInfo = {
