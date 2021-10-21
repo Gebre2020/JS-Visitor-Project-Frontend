@@ -43,26 +43,20 @@ class TripService {
         //debugger
        fetch(this.port + `/trips`, configObject)    
        .then(response => response.json())
+       // .then(json => console.log(json))
        .then(json => {
-        //debugger
         let t = new Trip({id: json.data.id, ...json.data.attributes})
-        //debugger  
         const findLoc = Location.all.find(l => parseInt(l.id) === t.locationId)
-        //debugger
+       
         if (!findLoc) {
-            //debugger
             const locObj = new Location({
                 id: json.data.attributes.location_id, 
                 name: json.data.attributes.location_name        
-                // debugger
             })
-            //debugger
-                locObj.addToDom()
-                locObj.addToDropDown()
+            locObj.addToDom()
+            locObj.addToDropDown()
         }
-        //debugger
         t.attachToDom()
-
        })
     }
 
