@@ -1,9 +1,11 @@
 const port = `http://localhost:3000`;
 const tripCall = new TripService(port);
 const locationCall = new LocationService(port);
+
+const form = document.getElementById("trip-form")
 const dropdown = document.getElementById("location-dropdown")
 const ul = document.getElementById('trip-list');
-const form = document.getElementById("trip-form")
+
 const nameValue = document.getElementById("trip-name")
 const addressValue = document.getElementById("trip-address")
 const budgetValue = document.getElementById("trip-budget")
