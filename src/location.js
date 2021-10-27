@@ -17,7 +17,7 @@ class Location {
     render() {
         this.element.innerText = this.name       
         this.element.id = `location-${this.id}`
-        return this.element
+        return this.element  
     }
 
     addToDom(){
@@ -30,25 +30,25 @@ class Location {
     }
 
     setActiveLocation = (e) => {
-        //event listener set location 
-        //add filter method 
+        //event listener set location
+        //add filter method
         //remove the current trips replace with new list of trips
-        
+
         let filteredLocation
         // let body = document.querySelector('body');
-        // body.style.backgroundColor = "pink" 
+        // body.style.backgroundColor = "pink"
         Location.all.forEach(l => {
             //debugger
             if(l.element === this.element && !this.active){
                 // debugger
                 l.element.classList.add('activated')
                 l.active = true
-                filteredLocation = l          
+                filteredLocation = l
             }else{
-                l.element.classList.remove('activated')   
+                l.element.classList.remove('activated')
                 l.active = false
             }
-            Trip.filteredByLocation(filteredLocation)  
+            Trip.filteredByLocation(filteredLocation)
         })
     }
 
