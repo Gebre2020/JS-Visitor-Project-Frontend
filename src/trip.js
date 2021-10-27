@@ -1,6 +1,6 @@
 class Trip {
     static all = [];
-    static tripsContainer = document.getElementById("trips-container")
+    static tripsContainer = document.getElementById("trips-container")  
     constructor({name, address, budget, id, location_id}) {
         this.name =name
         this.address =address
@@ -30,7 +30,7 @@ class Trip {
                 t.element.style.display = ""
             }
         }
-       // debugger
+         // debugger
     // or
     //    if(filteredLocation){
     //        const filteredTrips = Trip.all.filter((t) => {
@@ -53,12 +53,12 @@ class Trip {
         this.element.innerHTML = `
         <div data-id="${this.id}">
         <h3 class="name">${this.name}</h3>
-        Address: <span class="address">${this.address}</span><br/>
+        Address: <span class="address">${this.address}</span>
         Budget: $<span class="budget">${this.budget}</span>
         </div>
         <button class="edit" data-id=${this.id}>Edit Trip</button>
         <button class="delete" data-id=${this.id}>X</button>
-
+        
         `
         return this.element
     }
