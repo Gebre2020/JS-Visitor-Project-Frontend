@@ -2,6 +2,8 @@ const port = `http://localhost:3000`;
 const tripCall = new TripService(port);
 const locationCall = new LocationService(port);
 
+const oneWord = document.getElementById("one-word")
+
 const form = document.getElementById("trip-form")
 const dropdown = document.getElementById("location-dropdown")
 const ul = document.getElementById('trip-list');
@@ -14,7 +16,9 @@ const locNameValue = document.getElementById("location-name")
 tripCall.getTrips()
 locationCall.getLocations()
 
-form.addEventListener('submit', handleSubmit)
+form.addEventListener('submit', handleSubmit) 
+
+oneWord.addEventListener('click', oneWordRender)
 
 function handleSubmit(e) {
     e.preventDefault();
@@ -22,3 +26,14 @@ function handleSubmit(e) {
     // debugger
     e.target.reset();  //after creating to clear the data
 }
+
+function oneWordRender () {
+    for(const t of Trip.all){
+        if(t.name.indexOf(' ') < 0){
+            t.element.style.display =""               
+        }else {
+            t.element.style.display = "none"
+        }
+    }
+}
+
